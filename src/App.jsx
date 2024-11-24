@@ -1,12 +1,15 @@
 import Navbar from "./components/Navbar";
 import Highlights from "./components/Highlights";
-import hero from "./components/hero";
-const App = () => {
+import Heroic from "./components/Heroic.jsx";
 
+const App = () => {
   return (
-   <main className="bg-black">
-    
-   </main>
+    <main className="bg-black flex flex-col min-h-screen">
+      <Navbar />
+      <Heroic />
+      <Highlights />
+      
+    </main>
   );
 }
 

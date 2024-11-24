@@ -1,24 +1,26 @@
 import React from 'react';
 import { appleImg, bagImg, searchImg } from '../utils';
-
+import { navLists } from '../constants';
 const Navbar = () => {
   return (
-    <header className="w-full py-5 sm:px-10">
-      <nav className="flex items-center justify-between">
+    <header className="w-full py-5 sm:px-10 px-5 flex justify-between items-center">
+      <nav className="flex w-full screen-max-width">
         <img src={appleImg} alt="Apple" width={14} height={18} />
-        <div className="flex gap-5">
-          {['phones', 'macbook', 'ipads'].map((nav) => (
-            <div key={nav} className="text-gray-700 capitalize">
+        <div className="flex  flex -1 justify-center max-sm:hidden">
+          {navLists.map((nav) => (
+            <div key={nav} className="px-5 text-sm curson-pointer text-gray hover:text-white transition-all ">
               {nav}
             </div>
           ))}
         </div>
-        <div className="flex gap-3">
+        {/* not cofigured for sm devices */}
+        <div className="flex items-baseline gap-7 justify-end flex-1"> 
           <img src={searchImg} alt="search" width={18} height={18} />
           <img src={bagImg} alt="bag" width={18} height={18} />
         </div>
       </nav>
     </header>
+    
   );
 }
 
